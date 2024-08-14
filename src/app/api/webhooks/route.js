@@ -1,7 +1,7 @@
 import { Webhook } from "svix"
 import { headers } from "next/headers"
 
-export default async function route(req) {
+export default async function POST(req) {
 
     const WEBHOOK_SECRET = process.env. WEBHOOK_SECRET
 
