@@ -54,7 +54,7 @@ export default async function POST(req) {
     console.log('Webhook body:', body);
 
     if(eventType === 'user.created' || eventType === "user.updated") {
-        const { id,  first_name, last_name, email_addresses, username} = evt?.data
+        const { id,  first_name, last_name, email_addresses, username} = evt.data
         try {
             await createOrUpdateUser ( 
                 id,
@@ -75,7 +75,7 @@ export default async function POST(req) {
     }
 
     if(eventType === 'user.deleted') {
-        const { id } = evt?.data
+        const { id } = evt.data
         try {
             await deleteUser(id)
             return new Response('User is deleted', {
